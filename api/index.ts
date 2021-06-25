@@ -1,9 +1,11 @@
 import "dotenv/config";
 
+import Boom from "@hapi/boom";
 import Hapi from "@hapi/hapi";
 import Vision from "@hapi/vision";
 import Handlebars from "handlebars";
 import path from "path";
+import Database from "../src/utilities/Database";
 
 const server = Hapi.server({
     port: process.env.PORT,
@@ -16,6 +18,8 @@ const server = Hapi.server({
 
 const init = async () =>
 {
+    Database.init();
+
     await server.register(Vision);
 
     server.views({
@@ -33,20 +37,42 @@ const init = async () =>
         {
             const id = request.params.id;
 
-            // TODO: Fetch article from DB
+            const result = await Database.pool
+                .query(
+                    `
+                    select "art"."title", "art"."created_at", "art"."updated_at", "usr"."full_name"
+                    from
+                        "articles" as "art"
+                        inner join
+                        "authors" as "aut"
+                        on "art"."author" = "aut"."id"
+                        inner join
+                        "users" as "usr"
+                        on "aut"."user" = "usr"."id"
+                    where "art"."id" = $1
+                    `,
+                    [ id ],
+                );
+
+            if (result.rowCount === 0)
+            {
+                throw Boom.notFound();
+            }
+
+            const row = result.rows[0];
 
             return h.view("index", {
                 CLIENT_URL: process.env.CLIENT_URL,
                 article: {
-                    id: "art_test",
-                    title: "Title",
+                    id,
+                    title: row.title,
                     author: {
                         user: {
-                            full_name: "Alex Sandri",
+                            full_name: row.full_name,
                         },
                     },
-                    created_at: "2021-06-25T13:12:23Z",
-                    updated_at: "2021-06-25T13:12:23Z",
+                    created_at: (row.created_at as Date).toISOString(),
+                    updated_at: (row.updated_at as Date).toISOString(),
                 },
             });
         },
