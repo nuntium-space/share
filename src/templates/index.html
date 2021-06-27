@@ -8,7 +8,7 @@
     <!-- Open Graph -->
     <meta property="og:type" content="article">
     <meta property="og:title" content="{{ article.title }}">
-    <meta property="og:url" content="{{ CLIENT_URL }}/{{ article.id }}">
+    <meta property="og:url" content="{{ CLIENT_URL }}/article/{{ article.id }}">
     <meta property="article:author" content="{{ article.author.user.full_name }}">
     <meta property="article:published_time" content="{{ article.created_at }}">
     <meta property="article:modified_time" content="{{ article.updated_at }}">
@@ -16,6 +16,8 @@
     <title>{{ article.title }}</title>
 </head>
 <body>
-    
+    <script>
+        location.href = "{{ CLIENT_URL }}/article/{{ article.id }}";
+    </script>
 </body>
 </html>
