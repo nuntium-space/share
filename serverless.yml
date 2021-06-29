@@ -11,7 +11,12 @@ provider:
   lambdaHashingVersion: '20201221'
 
 plugins:
+  - serverless-plugin-typescript
   - serverless-localstack
+
+package:
+  patterns:
+    - src/templates/**
 
 custom:
   defaultStage: local

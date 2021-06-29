@@ -7,7 +7,6 @@ import Handlebars from "handlebars";
 import path from "path";
 import Database from "../src/utilities/Database";
 import serverless from "serverless-http";
-import { APIGatewayProxyHandler } from "aws-lambda";
 
 const server = Hapi.server({
     port: process.env.PORT,
@@ -87,7 +86,7 @@ init();
 
 let cachedHandler: any;
 
-export const handler: APIGatewayProxyHandler = async (event, context) =>
+export async function handler(event: any, context: any)
 {
     if (!cachedHandler)
     {
@@ -102,4 +101,4 @@ export const handler: APIGatewayProxyHandler = async (event, context) =>
     const res = await cachedHandler(event, context);
 
     return res;
-}
+};
