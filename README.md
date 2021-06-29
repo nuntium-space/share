@@ -20,6 +20,8 @@ CLIENT_URL=http://localhost:4200
 DATABASE_URL=postgresql://{{ USER }}:{{ PASSWORD }}@{{ HOST }}:{{ PORT }}/{{ NAME }}?schema={{ SCHEMA }}
 ```
 
+***Note:** `HOST` must be an IP address, and `not localhost`, because when running on the local lambda the function will be in a Docker container, and so it won't have access to the host's network.*
+
 ### Serve locally
 
 This will start a local server on `http://localhost:4001`.
@@ -35,6 +37,8 @@ Run
 ```
 sls deploy
 ```
+
+***Note:** if the deployment fails try to delete the `.build` folder.*
 
 [nuntium]: https://github.com/nuntium-space/nuntium
 [open-graph]: https://ogp.me
