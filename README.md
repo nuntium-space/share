@@ -28,5 +28,13 @@ This will start a local server on `http://localhost:4001`.
 npm start
 ```
 
+### Deploy to localstack
+
+Run
+
+```
+sls deploy
+```
+
 [nuntium]: https://github.com/nuntium-space/nuntium
 [open-graph]: https://ogp.me
