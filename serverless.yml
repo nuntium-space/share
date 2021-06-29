@@ -15,7 +15,7 @@ plugins:
   - serverless-localstack
 
 package:
-  patterns:
+  include:
     - src/templates/**
 
 custom:
