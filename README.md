@@ -30,20 +30,5 @@ This will start a local server on `http://localhost:4001`.
 npm start
 ```
 
-### Deploy to localstack
-
-#### Install [act][act]
-
-See [here](https://github.com/nektos/act#installation).
-
-#### Deploy
-
-Run
-
-```
-act
-```
-
-[act]: https://github.com/nektos/act
 [nuntium]: https://github.com/nuntium-space/nuntium
 [open-graph]: https://ogp.me
