@@ -32,13 +32,18 @@ npm start
 
 ### Deploy to localstack
 
+#### Install [act][act]
+
+See [here](https://github.com/nektos/act#installation).
+
+#### Deploy
+
 Run
 
 ```
-sls deploy
+act
 ```
 
-***Note:** if the deployment fails try to delete the `.build` folder.*
-
+[act]: https://github.com/nektos/act
 [nuntium]: https://github.com/nuntium-space/nuntium
 [open-graph]: https://ogp.me
