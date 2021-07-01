@@ -1,4 +1,4 @@
-# nuntium-share
+# share
 
 This repo contains files used by [nuntium][nuntium] to create share links that load pages with the shared article's metadata with these formats:
 - [`Open Graph`][open-graph]
