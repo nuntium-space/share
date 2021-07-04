@@ -1,5 +1,7 @@
 # share
 
+[![Deployment](https://github.com/nuntium-space/share/actions/workflows/cd.yml/badge.svg)](https://github.com/nuntium-space/share/actions/workflows/cd.yml)
+
 This repo contains files used by [nuntium][nuntium] to create share links that load pages with the shared article's metadata with these formats:
 - [`Open Graph`][open-graph]
 
