@@ -4,7 +4,8 @@
   "description": "",
   "main": "api/index.ts",
   "scripts": {
-    "start": "ts-node-dev api/index.ts"
+    "start": "ts-node-dev api/index.ts",
+    "lint": "eslint api/**/*.ts src/**/*.ts"
   },
   "keywords": [],
   "author": "",
@@ -23,6 +24,9 @@
     "@types/hapi__hapi": "^20.0.8",
     "@types/hapi__vision": "^5.5.2",
     "@types/pg": "^8.6.0",
+    "@typescript-eslint/eslint-plugin": "^4.28.1",
+    "@typescript-eslint/parser": "^4.28.1",
+    "eslint": "^7.30.0",
     "prettier": "^2.3.2",
     "serverless-localstack": "^0.4.32",
     "serverless-plugin-typescript": "^1.1.9",
