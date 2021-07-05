@@ -23,6 +23,7 @@
     "@types/hapi__hapi": "^20.0.8",
     "@types/hapi__vision": "^5.5.2",
     "@types/pg": "^8.6.0",
+    "prettier": "^2.3.2",
     "serverless-localstack": "^0.4.32",
     "serverless-plugin-typescript": "^1.1.9",
     "ts-node-dev": "^1.1.6",
