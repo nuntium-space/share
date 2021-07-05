@@ -40,13 +40,13 @@ const init = async () => {
         `
         select "art"."title", "art"."created_at", "art"."updated_at", "usr"."full_name"
         from
-            "articles" as "art"
-            inner join
-            "authors" as "aut"
-            on "art"."author" = "aut"."id"
-            inner join
-            "users" as "usr"
-            on "aut"."user" = "usr"."id"
+          "articles" as "art"
+          inner join
+          "authors" as "aut"
+          on "art"."author" = "aut"."id"
+          inner join
+          "users" as "usr"
+          on "aut"."user" = "usr"."id"
         where "art"."id" = $1
         `,
         [id]
