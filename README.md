@@ -6,6 +6,7 @@
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
 This repo contains files used by [nuntium][nuntium] to create share links that load pages with the shared article's metadata with these formats:
+
 - [`Open Graph`][open-graph]
 
 This allows apps, like social networks, to display to the user some details (title, link and others) in a card within the website / app.
@@ -25,7 +26,7 @@ CLIENT_URL=http://localhost:4200
 DATABASE_URL=postgresql://{{ USER }}:{{ PASSWORD }}@{{ HOST }}:{{ PORT }}/{{ NAME }}?schema={{ SCHEMA }}
 ```
 
-***Note:** `HOST` must be an IP address, and `not localhost`, because when running on the local lambda emulator the function will be in a Docker container, and so it won't have access to the host's network.*
+**\*Note:** `HOST` must be an IP address, and `not localhost`, because when running on the local lambda emulator the function will be in a Docker container, and so it won't have access to the host's network.\*
 
 ### Serve locally
 
