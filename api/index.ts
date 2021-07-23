@@ -76,6 +76,8 @@ const init = async () => {
   });
 
   server.start();
+
+  console.log(`Server listening on ${server.info.uri}`);
 };
 
 init();
